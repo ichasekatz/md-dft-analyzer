@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "md-dft-analyzer"
+version = "0.1.0"
+description = "MD and DFT simulation output analysis: thermodynamic properties, band structure, and convergence"
+readme = "README.md"
+license = { text = "GPL-3.0-or-later" }
+requires-python = ">=3.12"
+authors = [{ name = "Chase Katz", email = "ichasekatz@tamu.edu" }]
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.0",
+]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.8"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.8",
+    "ty>=0.0.1a13",
+    "matplotlib>=3.8",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/md_dft_analyzer"]
+
+[tool.ruff]
+line-length = 130
+force-exclude = true
+
+[tool.ruff.lint]
+select = ["A", "B", "C4", "D", "E", "ERA", "F", "FA", "I", "ICN", "N", "PL", "PTH", "Q", "SIM", "TC", "UP", "W"]
+ignore = ["E501", "PLR0913", "PLR2004"]
+pydocstyle.convention = "google"
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
