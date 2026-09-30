@@ -7,7 +7,7 @@ from unittest import TestCase
 import numpy as np
 import pytest
 
-from md_dft_analyzer.numerics import gauss_pivot, poly_eval, poly_fit, r_squared
+from md_dft_analyzer.numerics import poly_eval, poly_fit, r_squared
 
 
 class TestPolyFit(TestCase):

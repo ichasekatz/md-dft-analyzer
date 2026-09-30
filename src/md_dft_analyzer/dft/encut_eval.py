@@ -9,7 +9,6 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-
 _energy_pattern = re.compile(r"free  energy   TOTEN\s+=\s+([-+]?\d+\.\d+)")
 _pressure_pattern = re.compile(r"external pressure\s*=\s*([-+]?\d+\.\d+)")
 
